@@ -1,0 +1,40 @@
+@extends('main')
+
+@section('content')
+    <div class="content services-page">
+        <h2>Тарифы и услуги</h2>
+        <form action="general" method="post">
+            <div class="offer-wrapper">
+                <div class="offer">
+                    <h4>Мобильный интернет</h4>
+                    <select name="mobile_service" id="">
+                        <option value="0">Мобильные тарифы</option>
+                        @foreach($data['mobile'] as $mobile)
+                            <option value="{{$mobile->id}}">{{$mobile->description}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="offer">
+                    <h4>Домашний интернет</h4>
+                    <select name="home_service" id="">
+                        <option value="0">Домашние тарифы</option>
+                        @foreach($data['home'] as $home)
+                            <option value="{{$home->id}}">{{$home->description}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="offer">
+                    <h4>Интернет+ТВ</h4>
+                    <br>
+                    <select name="home-tv_service" id="">
+                        <option value="0">Домашние тарифы + ТВ</option>
+                        @foreach($data['home_tv'] as $hometv)
+                            <option value="{{$hometv->id}}">{{$hometv->description}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Продолжить</button>
+        </form>
+    </div>
+@endsection

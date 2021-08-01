@@ -1,0 +1,45 @@
+.meet-page, .incoming-page, .services-page{
+    width: 45%;
+    margin: auto;
+    margin-top: 100px;
+}
+.meet-page h1, h4{
+    margin-bottom: 30px;
+}
+.meet-page a{
+    text-decoration: none;
+}
+.meet-page button, .incoming-page button, .services-page button{
+    display: block;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+}
+.incoming-form{
+    margin-top: 25px;
+}
+.incoming-form input, button{
+    margin-top: 15px;
+}
+.incoming-form div{
+    margin-top: 15px;
+}
+.incoming-form select{
+    float: right;
+}
+.incoming-form span{
+    margin-left: 0.75rem;
+    font-size: 1rem;
+    color: rgb(133,133,133);
+}
+.services-page .offer-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.services-page .offer{
+    border: solid grey 1px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+}
