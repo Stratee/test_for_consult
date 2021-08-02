@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@meetPage');
 Route::get('incoming', 'MainController@incomingPage');
 Route::post('services', 'MainController@servicesPage');
+Route::post('general', 'MainController@generalPage');
+Route::get('handling', 'MainController@handlingPage');
+Route::get('cancel', 'MainController@cancelPage');

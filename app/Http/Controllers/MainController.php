@@ -44,7 +44,22 @@ class MainController extends Controller
             return view('services', ['data' => $data]);
         }
         else{
-            return view('another');
+            return view('handling');
         }
     }
+
+    public function generalPage()
+    {
+        return view('general');
+    }
+
+    public function handlingPage()
+    {
+        return view('handling');
+    }
+    public function cancelPage()
+    {
+        return view('cancel');
+    }
+
 }

@@ -27,6 +27,7 @@
             </div>
             <input type="text" class="form-control" placeholder="Комментарий к звонку" name="comment">
             <button type="submit">Продолжить</button>
+            <button type="submit" id="cancel_btn">Отмена заявки</button>
         </form>
 
     </div>

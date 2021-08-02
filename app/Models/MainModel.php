@@ -28,7 +28,3 @@ class MainModel extends Model
         return $callReasons;
     }
 }
-
-
-
-// call reason & city - 1 page

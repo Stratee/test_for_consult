@@ -4,6 +4,7 @@
     <div class="content services-page">
         <h2>Тарифы и услуги</h2>
         <form action="general" method="post">
+            @csrf
             <div class="offer-wrapper">
                 <div class="offer">
                     <h4>Мобильный интернет</h4>

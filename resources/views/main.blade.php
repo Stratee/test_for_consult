@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href={{"css/style.css"}}>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="{{"js/main.js"}}"></script>
 </head>
 <body>
     @yield('content')
