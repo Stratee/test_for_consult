@@ -37,5 +37,6 @@
             </div>
             <button type="submit">Продолжить</button>
         </form>
+        <a href="cancel"><button type="submit" id="cancel_btn">Отмена заявки</button></a>
     </div>
 @endsection

@@ -6,10 +6,10 @@
 .meet-page h1, h4{
     margin-bottom: 30px;
 }
-.meet-page a{
+a{
     text-decoration: none;
 }
-.meet-page button, .incoming-page button, .services-page button{
+button{
     display: block;
     width: 30%;
     margin: auto;
@@ -18,8 +18,11 @@
 .incoming-form{
     margin-top: 25px;
 }
-.incoming-form input, button{
+.incoming-form input{
     margin-top: 15px;
+}
+.incoming-form button{
+    margin-top: 35px;
 }
 .incoming-form div{
     margin-top: 15px;
@@ -42,4 +45,7 @@
     padding: 15px;
     border-radius: 10px;
     margin: 10px;
+}
+#cancel_btn{
+    margin-top: 25px;
 }

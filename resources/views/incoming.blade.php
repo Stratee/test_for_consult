@@ -10,7 +10,7 @@
                 <span>Город</span>
                 <select name="city" id="">
                     @foreach($data['cities'] as $city)
-                        <option value="{{$city->name}}">{{$city->name}}</option>
+                        <option value="{{$city->id}}">{{$city->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -27,8 +27,7 @@
             </div>
             <input type="text" class="form-control" placeholder="Комментарий к звонку" name="comment">
             <button type="submit">Продолжить</button>
-            <button type="submit" id="cancel_btn">Отмена заявки</button>
         </form>
-
+        <a href="cancel"><button type="submit" id="cancel_btn">Отмена заявки</button></a>
     </div>
 @endsection
