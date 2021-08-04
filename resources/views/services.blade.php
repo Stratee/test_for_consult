@@ -35,6 +35,10 @@
                     </select>
                 </div>
             </div>
+            <input type="hidden" name="name" value="{{$data['name']}}">
+            <input type="hidden" name="city_id" value="{{$data['city_id']}}">
+            <input type="hidden" name="address" value="{{$data['address']}}">
+            <input type="hidden" name="phone" value="{{$data['phone']}}">
             <button type="submit">Продолжить</button>
         </form>
         <a href="cancel"><button type="submit" id="cancel_btn">Отмена заявки</button></a>

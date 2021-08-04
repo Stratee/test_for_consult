@@ -53,7 +53,7 @@ class MainModel extends Model
         $address = $data['address'];
         $phone = $data['phone'];
 
-        $currentUser = DB::select("SELECT DISTINCT * FROM users WHERE `name`= '$name' AND `address` = '$address' AND `phone` = '$phone' AND `city` = $city");
+        $currentUser = DB::select("SELECT * FROM users WHERE `name`= '$name' AND `address` = '$address' AND `phone` = '$phone' AND `city` = $city");
 
         if (empty($currentUser)){
             return 1;
@@ -63,4 +63,35 @@ class MainModel extends Model
             exit();
         }
     }
+
+    public function addService($data)
+    {
+        $name = $data['name'];
+        $city = $data['city_id'];
+        $address = $data['address'];
+        $phone = $data['phone'];
+
+        $currentUser = DB::select("SELECT * FROM users WHERE `name`= '$name' AND `address` = '$address' AND `phone` = '$phone' AND `city` = $city");
+        $userId = $currentUser[0]->id;
+
+        $serviceIds = [];
+        if ($data['mobile_service'] != 0){
+            array_push($serviceIds, $data['mobile_service']);
+        }
+        if ($data['home_service'] != 0){
+            array_push($serviceIds, $data['home_service']);
+        }
+        if ($data['home-tv_service'] != 0){
+            array_push($serviceIds, $data['home-tv_service']);
+        }
+
+        if (!empty($serviceIds)){
+            $result = implode(',', $serviceIds);
+        }
+
+        $serviceAdd = DB::update("UPDATE `appeal` SET `service_id`= '$result' WHERE `user_id`=$userId");
+    }
 }
+
+
+//`user_id`=[value-2],`comment`=[value-3],`reason_id`=[value-4],`service_id`=[value-5] WHERE 1

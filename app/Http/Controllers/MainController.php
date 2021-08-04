@@ -59,8 +59,14 @@ class MainController extends Controller
         }
     }
 
-    public function generalPage()
+    public function generalPage(Request $request)
     {
+        $model = new MainModel();
+        $rqData = $request->all();
+
+        $model->addService($rqData);
+
+        xprint('ready');
         return view('general');
     }
 
