@@ -91,7 +91,29 @@ class MainModel extends Model
 
         $serviceAdd = DB::update("UPDATE `appeal` SET `service_id`= '$result' WHERE `user_id`=$userId");
     }
+
+    public function getGeneralData($data)
+    {
+        $cityId = $data['city_id'];
+        $cityObj = DB::select("SELECT * FROM `cities` WHERE id = $cityId");
+
+        $result['city'] = $cityObj[0];
+
+        if (isset($data['mobile_service']) && $data['mobile_service'] != 0){
+            $serviceIds[] = $data['mobile_service'];
+        }
+        if (isset($data['home_service']) && $data['home_service'] != 0){
+            $serviceIds[] = $data['home_service'];
+        }
+        if (isset($data['home-tv_service']) && $data['home-tv_service'] != 0){
+            $serviceIds[] = $data['home-tv_service'];
+        }
+        $serviceIds = implode(',', $serviceIds);
+
+        $services = DB::select("SELECT * FROM `services` WHERE `id` IN ($serviceIds)");
+
+        $result['services'] = $services;
+
+        return $result;
+    }
 }
-
-
-//`user_id`=[value-2],`comment`=[value-3],`reason_id`=[value-4],`service_id`=[value-5] WHERE 1

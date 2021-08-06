@@ -49,3 +49,6 @@ button{
 #cancel_btn{
     margin-top: 25px;
 }
+.general-page table{
+    width: 100%;
+}

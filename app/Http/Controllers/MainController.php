@@ -66,8 +66,10 @@ class MainController extends Controller
 
         $model->addService($rqData);
 
-        xprint('ready');
-        return view('general');
+        $data['user_data'] = $rqData;
+        $data['service_data'] = $model->getGeneralData($rqData);
+
+        return view('general', ['data' => $data]);
     }
 
     public function handlingPage()
