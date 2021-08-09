@@ -18,12 +18,14 @@
                     <td>Телефон</td>
                     <td>{{$data['user_data']['phone']}}</td>
                 </tr>
-                <tr>
-                    <td>Подключить тарифы</td>
-                    @foreach($data['service_data']['services'] as $service)
-                        <td>{{$service->description}}</td>
-                    @endforeach
-                </tr>
+                @if(isset($data['service_data']['services']))
+                    <tr>
+                        <td>Подключить тарифы</td>
+                        @foreach($data['service_data']['services'] as $service)
+                            <td>{{$service->description}}</td>
+                        @endforeach
+                    </tr>
+                @endif
             </table>
         </div>
         <div class="cancel-wrapper">

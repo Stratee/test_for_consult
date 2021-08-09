@@ -3,6 +3,15 @@
 @section('content')
     <div class="content incoming-page">
         <h2>Входящий звонок</h2>
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="services" class="incoming-form" method="post">
             @csrf
             <input type="text" class="form-control" placeholder="ФИО" name="name" required>

@@ -52,3 +52,22 @@ button{
 .general-page table{
     width: 100%;
 }
+.cancel-form{
+    display: flex;
+    flex-direction: column;
+}
+.cancel-form h5{
+    margin: auto;
+    margin-top: 30px;
+}
+.cancel-form select{
+    width: 250px;
+    margin: auto;
+    margin-top: 15px;
+}
+.cancel-form textarea{
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+}

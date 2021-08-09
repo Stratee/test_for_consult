@@ -24,6 +24,13 @@ class MainController extends Controller
     }
 
     public function servicesPage(Request $request){
+        $valid = $request->validate([
+            'name' => 'required|min:3',
+            'address' => 'required|min:25',
+            'phone' => 'required|digits:value',
+            'comment' => 'max:250'
+        ]);
+
         if ($_POST['call_reason'] == 1 || $_POST['call_reason'] == 2){  // если подключение или смена тарифа
             $model = new MainModel();
 

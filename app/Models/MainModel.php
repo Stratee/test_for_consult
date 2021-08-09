@@ -87,9 +87,8 @@ class MainModel extends Model
 
         if (!empty($serviceIds)){
             $result = implode(',', $serviceIds);
+            $serviceAdd = DB::update("UPDATE `appeal` SET `service_id`= '$result' WHERE `user_id`=$userId");
         }
-
-        $serviceAdd = DB::update("UPDATE `appeal` SET `service_id`= '$result' WHERE `user_id`=$userId");
     }
 
     public function getGeneralData($data)
@@ -108,11 +107,12 @@ class MainModel extends Model
         if (isset($data['home-tv_service']) && $data['home-tv_service'] != 0){
             $serviceIds[] = $data['home-tv_service'];
         }
-        $serviceIds = implode(',', $serviceIds);
 
-        $services = DB::select("SELECT * FROM `services` WHERE `id` IN ($serviceIds)");
-
-        $result['services'] = $services;
+        if (isset($serviceIds)){
+            $serviceIds = implode(',', $serviceIds);
+            $services = DB::select("SELECT * FROM `services` WHERE `id` IN ($serviceIds)");
+            $result['services'] = $services;
+        }
 
         return $result;
     }
